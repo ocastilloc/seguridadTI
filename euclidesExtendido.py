@@ -16,7 +16,7 @@ def euclidesExtendido(a, b):
         #Actualizar a,b
         a = b
         b = resto
-        # valores para u, v
+        # valores para u, v para obtener la mínima, combinación lineal.
         u = u0 - cociente * u1
         v = v0 - cociente * v1
         
@@ -25,3 +25,4 @@ def euclidesExtendido(a, b):
         u1 = u; v1 = v
  
     return  a, u0, v0
+
