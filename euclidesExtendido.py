@@ -8,7 +8,6 @@ def euclidesExtendido(a, b):
     u0 = 1; v0 = 0
     u1 = 0; v1 = 1
     
-    # Cuando b es 0, a = al mcd
     while b != 0:
         
         cociente = a//b
