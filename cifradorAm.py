@@ -35,6 +35,6 @@ def main(palabra,modo):
     if modo == "cifrar":
         palabraResultado = cifrar.cifrar(alfabeto,palabraFormateada,constanteDecimacion,constanteDesplazamiento,modulo)
     else:
-        descifrar.descifrar()
+        palabraResultado = descifrar.descifrar(alfabeto,diccionario,palabraFormateada,constanteDecimacion,constanteDesplazamiento,modulo)
 
     return palabraResultado
