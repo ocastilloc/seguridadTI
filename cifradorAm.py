@@ -1,3 +1,4 @@
+import sys
 import euclidesExtendido
 import cifrar
 import descifrar
@@ -13,15 +14,32 @@ def main(palabra,modo):
               "K":10,"L":11,"M":12,"N":13,"Ñ":14,"O":15,"P":16,"Q":17,"R":18,
               "S":19,"T":20,"U":21,"V":22,"W":23,"X":24,"Y":25,"Z":26}
     
+    #constanteDecimacion y constanteDesplazamiento serán obtenidas
+    #de la funcion f(clave)=x,y
+    constanteDecimacion=5 #x
+    constanteDesplazamiento=15 #y
+    modulo=29 # n
+    
+    #Validaciones variables
+    if (constanteDesplazamiento < 0 or constanteDesplazamiento > modulo or constanteDecimacion < 0):
+        sys.exit('Valores incorrectos en la constanteDesplazamiento o constanteDecimacion')
+    
+    #modulo y constanteDecimacion deben ser coprimos (solo divisibles por 1)
+    #necesario para obtener el inverso multiplicador
+    diccionario = euclidesExtendido.euclidesExtendido(modulo,constanteDecimacion)
+    
+    if diccionario["maximoComunDivisor"] != 1:
+        sys.exit('La constanteDecimacion y modulo no son coprimos')
+        
+    
+    
     #Modo de operacion cifrar o descifrar
     if modo == "cifrar":
         cifrar.cifrar()
     else:
         descifrar.descifrar()
-            
-    
-    #Obtener el máximo común divisor para comprobar que n e x sean coprimos (solo divisibles por 1)
+
     #Tener el inverso multiplicativo para la función descifrar.
-    diccionario = euclidesExtendido.euclidesExtendido(29,5)
+   
     
     return diccionario,palabraFormateada,alfabeto
