@@ -23,6 +23,7 @@ def euclidesExtendido(a, b):
         #Actualizar valores en cada iteración
         u0 = u1; v0 = v1
         u1 = u; v1 = v
+        
+        diccionario={"maximoComunDivisor":a,"minimo":u0,"inversoMultiplicativo":v0}
  
-    return  a, u0, v0
-
+    return diccionario
