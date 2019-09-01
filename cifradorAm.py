@@ -30,16 +30,11 @@ def main(palabra,modo):
     
     if diccionario["maximoComunDivisor"] != 1:
         sys.exit('La constanteDecimacion y modulo no son coprimos')
-        
-    
     
     #Modo de operacion cifrar o descifrar
     if modo == "cifrar":
-        cifrar.cifrar()
+        cifrar.cifrar(alfabeto,palabraFormateada,constanteDecimacion,constanteDesplazamiento,modulo)
     else:
         descifrar.descifrar()
 
-    #Tener el inverso multiplicativo para la función descifrar.
-   
-    
     return diccionario,palabraFormateada,alfabeto
