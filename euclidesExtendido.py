@@ -8,7 +8,6 @@ def euclidesExtendido(a, b):
     u0 = 1; v0 = 0
     u1 = 0; v1 = 1
     
-    # Cuando b es 0, a =  mcd
     while b != 0:
         
         cociente = a//b
@@ -17,12 +16,14 @@ def euclidesExtendido(a, b):
         #Actualizar a,b
         a = b
         b = resto
-        # valores para u, v
+        # valores para u, v para obtener la mínima, combinación lineal.
         u = u0 - cociente * u1
         v = v0 - cociente * v1
         
         #Actualizar valores en cada iteración
         u0 = u1; v0 = v1
         u1 = u; v1 = v
+        
+        diccionario={"maximoComunDivisor":a,"minimo":u0,"inversoMultiplicativo":v0}
  
-    return  a, u0, v0
+    return diccionario
