@@ -1,5 +1,4 @@
 import clave
-#import euclidesExtendido
 
 def cifrar(alfabeto,palabraFormateada,modulo):
     

@@ -1,4 +1,6 @@
 # Contiene una clave o grupo de ellas para generar la cosntante de decimación y desplazamiento.
+#import array as arrayClave
+
 def clave(x,y,clave,alfabeto):
     
     letraMensajeDecimacion = clave[x]
@@ -18,5 +20,7 @@ def clave(x,y,clave,alfabeto):
 def diccionarioClave():
      
     claves = "XHCDFEWI"
+    
+    #claveArray = arrayClave.array("XHCDFEWI","ZFHJVÑTS","OJGNRQPM",".HRLÑGVW","SXODUZER","ICQYG.ÑT","EWLIFSZO","RKNUVKXL")
      
     return claves

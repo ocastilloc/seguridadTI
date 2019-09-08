@@ -1,5 +1,4 @@
 import sys
-#import euclidesExtendido
 import cifrar
 import descifrar
 
