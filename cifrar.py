@@ -1,5 +1,7 @@
 import clave
-def cifrar(alfabeto,palabraFormateada,constanteDecimacion,constanteDesplazamiento,modulo):
+#import euclidesExtendido
+
+def cifrar(alfabeto,palabraFormateada,modulo):
     
      #Obtener el codigo de cada letra para cifrar
     largoPalabra=len(palabraFormateada)
@@ -25,9 +27,12 @@ def cifrar(alfabeto,palabraFormateada,constanteDecimacion,constanteDesplazamient
             x=0
             y=1
         
-        clave.clave(x,y,contenidoClave)
+        resultadoClave = clave.clave(x,y,contenidoClave,alfabeto)
         x=x+1
         y=x+1
+        
+        valorDecimacion = resultadoClave["valorDecimacion"]
+        valorDesplazamiento = resultadoClave["valorDesplazamiento"]
     
         
         letraMensaje = palabraFormateada[contador]
@@ -36,7 +41,7 @@ def cifrar(alfabeto,palabraFormateada,constanteDecimacion,constanteDesplazamient
         #Formula cifrar:
         #C= (X*A+Y) MOD N
         valorLetraCifrada=0
-        valorLetraCifrada = (constanteDecimacion * codigoLetra + constanteDesplazamiento) % modulo
+        valorLetraCifrada = (valorDecimacion * codigoLetra + valorDesplazamiento) % modulo
         
         if valorLetraCifrada > largoAlfabeto:
             letraCifrada = list(alfabeto.keys())[list(alfabeto.values()).index(largoAlfabeto)]

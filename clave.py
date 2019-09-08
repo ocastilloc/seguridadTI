@@ -1,20 +1,22 @@
 # Contiene una clave o grupo de ellas para generar la cosntante de decimación y desplazamiento.
-def clave(x,y,clave):
+def clave(x,y,clave,alfabeto):
     
-    letraActual = clave[x];
-    letraSiguiente = clave[y]
+    letraMensajeDecimacion = clave[x]
+    letraMensajeDesplazamiento = clave[y]
     
-    print("Decimacion ",letraActual)
-    print("Desplazamiento",letraSiguiente)
+    valorDecimacion = alfabeto[letraMensajeDecimacion]
+    valorDesplazamiento = alfabeto[letraMensajeDesplazamiento]
+    
+    #print("Decimacion ",valorDecimacion," Desplazamiento ",valorDesplazamiento)
     
     resultado=""
-    resultado= {"decimacion":letraActual, "desplazamiento":letraSiguiente}
+    resultado= {"valorDecimacion":valorDecimacion, "valorDesplazamiento":valorDesplazamiento}
     
     return resultado
 
 #funcion que contiene una o más claves privadas
 def diccionarioClave():
      
-    claves = "XBCDFEWI"
+    claves = "XHCDFEWI"
      
     return claves
