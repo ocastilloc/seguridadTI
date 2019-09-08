@@ -12,6 +12,7 @@ def cifrar(alfabeto,palabraFormateada,modulo):
     valY=1
     x=0
     y=0
+    indiceClave=0
     
     for contador in range(largoPalabra):
         
@@ -19,12 +20,19 @@ def cifrar(alfabeto,palabraFormateada,modulo):
             x=valX
             y=valY
          
-        contenidoClave = clave.diccionarioClave()
+        llamarContenidoClave = clave.diccionarioClave(indiceClave)
+        contenidoClave = llamarContenidoClave["clave"]
+        
         largoClave = len(contenidoClave)-1
+        cantidadClave = llamarContenidoClave["cantidadClaves"] -1
+        
+        if indiceClave >= cantidadClave:
+            indiceClave = 0
         
         if x >= largoClave:
             x=0
             y=1
+            indiceClave = indiceClave+1
         
         resultadoClave = clave.clave(x,y,contenidoClave,alfabeto)
         x=x+1
