@@ -61,12 +61,8 @@ def cifrar(alfabeto,palabraFormateada,modulo):
              palabraCifrada = palabraCifrada + letraCifrada
     
     except Exception as e:
-         print("Error general: ",e)
          tipoException, exc_obj, exc_tb = sys.exc_info()
          archivoError = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-         print("Tipo de excepción : ",tipoException)
-         print("Archivo que contiene el error : ",archivoError)
-         print("Número de la linea con el error : ",exc_tb.tb_lineno)
-    
+         raise ValueError("Error en archivo : ",archivoError," en la linea : ",exc_tb.tb_lineno) from e
     
     return palabraCifrada

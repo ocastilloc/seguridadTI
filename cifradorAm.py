@@ -6,12 +6,13 @@ from unicodedata import normalize
 
 #palabra: corresponde a un texto a cifrar o descifrar
 #modo: para cifrar utilizar la palabra "cifrar" y para descifrar "descifrar"
-def main(modo):
+def main(modo,rutaArchivoEntrada,rutaArchivoSalida):
     
     contenidoArchivo=""
-    leerArchivoEntrada=open('entrada.txt', 'r')
+    leerArchivoEntrada=open(rutaArchivoEntrada, 'r')
     palabraResultado=""
-    leerArchivoSalida=open("salida.txt", "w")
+    leerArchivoSalida=open(rutaArchivoSalida, "w")
+    respuestaFinal="No fue posible realizar la operación."
     
     try:
         
@@ -53,6 +54,8 @@ def main(modo):
         #escribir archivo
         print(palabraResultado, file=leerArchivoSalida)
         
+        respuestaFinal="Operación realizada con exito, revisar archivo de salida."
+        
         #Instrucciones del error   
     except BlockingIOError as eb:
         print("Problema con el archivo: ",eb)
@@ -62,9 +65,9 @@ def main(modo):
         print("Error general: ",e)
         tipoException, exc_obj, exc_tb = sys.exc_info()
         archivoError = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        print("Tipo de excepción : ",tipoException)
+        print("Tipo de excepcion : ",tipoException)
         print("Archivo que contiene el error : ",archivoError)
-        print("Número de la linea con el error : ",exc_tb.tb_lineno)
+        print("Numero de la linea con el error : ",exc_tb.tb_lineno)
         
     finally:
         #cerrar recursos
@@ -73,4 +76,4 @@ def main(modo):
     
     #Leer archivo de entrada desde dirección web:
     
-    return palabraResultado
+    return respuestaFinal
