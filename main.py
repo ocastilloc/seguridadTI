@@ -3,12 +3,15 @@ import cifrar
 import descifrar
 import re
 from unicodedata import normalize
-
+#archivo principal
 #palabra: corresponde a un texto a cifrar o descifrar
 #modo: para cifrar utilizar la palabra "cifrar" y para descifrar "descifrar"
 def main(modo,rutaArchivoEntrada,rutaArchivoSalida):
     
     contenidoArchivo=""
+    #debe entregar la ruta del archivo de entrada, por ejemplo:
+    #/ProyectoPython/seguridadTI/recursos/entrada.txt
+    #la ruta aplica tanto en windows como en linux
     leerArchivoEntrada=open(rutaArchivoEntrada, 'r')
     palabraResultado=""
     leerArchivoSalida=open(rutaArchivoSalida, "w")
@@ -30,6 +33,7 @@ def main(modo,rutaArchivoEntrada,rutaArchivoSalida):
    
         #eliminar espacios en blanco
         contenidoArchivo = contenidoArchivo.upper().strip().replace(",","")
+        contenidoArchivo = contenidoArchivo.upper().strip().replace('"','')
         palabraFormateada = contenidoArchivo.upper().strip().replace("\n"," ")
         
         lista = list(palabraFormateada)
