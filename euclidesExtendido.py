@@ -31,7 +31,7 @@ def euclidesExtendido(a, b):
             #Actualizar valores en cada iteración
             u0 = u1; v0 = v1
             u1 = u; v1 = v
-            #La duncion retorna un diccionario con tres valores:
+            #La funcion retorna un diccionario con tres valores:
             #Maximo comun divisor, el minimo y el inverso multiplicativo.
             diccionario={"maximoComunDivisor":a,"minimo":u0,"inversoMultiplicativo":v0}
         
